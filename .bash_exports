@@ -1,0 +1,5 @@
+# disable microsoft telemetry
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
+
+export ASAN_OPTIONS="disable_coredump=0:unmap_shadow_on_exit=1:abort_on_error=1:vertbosity=1:log_threads=1"
+export ASAN_SYMBOLIZER_PATH="/bin/llvm-symbolizer"
