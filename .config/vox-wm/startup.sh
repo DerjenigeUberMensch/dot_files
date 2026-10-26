@@ -26,7 +26,10 @@ dbus-update-activation-environment --systemd \
 # Sys
 /usr/lib/polkit-kde-authentication-agent-1 &
 xsettingsd &
-xfce4-clipman &
+
+# clipman destroys itself after 60s if no taskbar is detected... why
+# xfce4-clipman &
+parcellite -n &
 
 # gnoem keyring setup manually
 eval "$(/usr/bin/gnome-keyring-daemon --start --components=secrets)"
